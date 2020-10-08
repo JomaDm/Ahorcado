@@ -1,1 +1,12 @@
-print("Ahorcado Building...")
+ahorcado = """
+-------
+|     |
+|     0
+|    / \\
+|     |
+|    / \\
+-        
+"""
+
+
+print(ahorcado)
