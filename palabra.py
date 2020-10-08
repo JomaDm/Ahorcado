@@ -7,11 +7,11 @@ class Palabra():
     """
     self.palabra = str()    
   
-  def establecerPalabra(self,palabra,file="diccionario.txt"):
+  @staticmethod
+  def guardarPalabra(palabra,file="diccionario.txt"):
     """
-    Se establece una palabra para el juego
-    """
-    self.palabra = palabra
+    Se guarda una palabra en el archivo del diccionario
+    """    
     
     with open(file,"a") as archivo_dicc:
       archivo_dicc.write("\n"+palabra)
@@ -26,6 +26,11 @@ class Palabra():
     with open(file,"r") as archivo_dicc:
       lista_palabras = archivo_dicc.readlines()
         
-    self.palabra = lista_palabras[randint(0,len(lista_palabras)-1)]    
-    print(self.palabra)
+    self.palabra = lista_palabras[randint(0,len(lista_palabras)-1)].lower()
+    self.palabra = self.palabra.replace(" ","")
+    self.palabra = self.palabra.replace("\n","")
+       
+  
+  def obtenerPalabra(self):
+    return self.palabra
     
