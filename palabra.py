@@ -29,6 +29,7 @@ class Palabra():
     self.palabra = lista_palabras[randint(0,len(lista_palabras)-1)].lower()
     self.palabra = self.palabra.replace(" ","")
     self.palabra = self.palabra.replace("\n","")
+    del lista_palabras
        
   
   def obtenerPalabra(self):
